@@ -15,7 +15,7 @@ const MongoStore = require("connect-mongo")(session);
 
 mongoose.Promise = Promise;
 mongoose
-  .connect("mongodb://localhost/Zoulidery-Project", { useMongoClient: true })
+  .connect(process.env.MONGODB_URI, { useMongoClient: true })
   .then(() => {
     console.log("Connected to Mongo!");
   })
